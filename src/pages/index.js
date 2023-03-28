@@ -10,6 +10,9 @@ import Thumbnail from "/public/sample/reel-thumbnail.jpg";
 import MAPP from "/public/sample/mapp.jpg";
 import Asterra from "/public/sample/asterra.jpg";
 
+// Replace with real data source
+import SolutionsData from "@/data/homepage/solutions.js";
+
 export default function Index() {
   return (
     <Layout>
@@ -70,7 +73,7 @@ export default function Index() {
               We have a fleet of experience and the work to prove it. Check out
               how we've propelled our clients to success. Digital is our domain.
             </p>
-            <div className="mt-7 ml-7">
+            <div className="mt-7 ml-3">
               <Button
                 button_class="primary"
                 title="Explore more"
@@ -106,7 +109,7 @@ export default function Index() {
           without a solid strategy. Our crew provides full-funnel marketing
           strategy that creates sustained brand growth.
         </p>
-        <div className="mt-7 ml-7">
+        <div className="mt-7">
           <Button
             button_class="primary"
             title="Go forth"
@@ -115,6 +118,41 @@ export default function Index() {
             target=""
           />
         </div>
+      </section>
+      {/* Ocean */}
+      <div className="bg-no-repeat bg-cover bg-[url('/ocean.png')] w-full h-[200px] opacity-40 md:h-[500px]"></div>
+      {/* Solutions Stickers */}
+      <section className="px-6 max-w-screen-xl mx-auto sm:px-10 bg-no-repeat bg-cover bg-center bg-[url('/deep-ocean.png')] w-full h-[1000px] md:h-[2000px]">
+        {SolutionsData.map((solution) => {
+          return (
+            <div className="mb-20 flex" key={solution.id}>
+              <div>
+                <p
+                  className="text-4xl font-gin text-gold mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: solution.title.split(" ").join("<br/>"),
+                  }}
+                />
+                <ul className="list-none">
+                  {solution.bullets.map((bullet) => {
+                    return (
+                      <li className="text-xl mb-3" key={bullet.id}>
+                        {bullet.description}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+              <Image
+                src={solution.sticker.src}
+                alt={solution.sticker.alt}
+                width={300}
+                height={300}
+                className="mb-5"
+              />
+            </div>
+          );
+        })}
       </section>
     </Layout>
   );

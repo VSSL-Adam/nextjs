@@ -16,7 +16,7 @@ export default function FeaturedWorkCard({
           <p className="font-gin text-3xl px-4 pb-2 md:py-6 md:border-r md:border-none border-light_gray transition-all group-hover:border-black">
             {title}
           </p>
-          <p className="font-libre_franklin text-xl leading-normal text-gold md:border-t group-hover:border-black border-light_gray px-4 md:px-6 md:py-4 transition-all group-hover:text-black">
+          <p className="font-libre_franklin text-xl leading-normal text-gold md:border-t group-hover:border-black border-light_gray px-4 md:py-4 transition-all group-hover:text-black">
             {description}
           </p>
         </div>
