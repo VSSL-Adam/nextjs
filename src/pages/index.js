@@ -48,7 +48,7 @@ export default function Index() {
             We build brands that sink the competition.
           </h1>
           <p className="font-libre_franklin text-xl leading-normal">
-            We're a crew of digital marketing creatives, builders, and
+            We are a crew of digital marketing creatives, builders, and
             strategists that know how to make brands stand out. We identify and
             amplify what makes your brand unique in order to make waves and sink
             the competition.
@@ -78,7 +78,8 @@ export default function Index() {
           <div className="lg:grid lg:grid-cols-2 lg:pr-96">
             <p className="font-libre_franklin text-xl leading-normal">
               We have a fleet of experience and the work to prove it. Check out
-              how we've propelled our clients to success. Digital is our domain.
+              how we&quot;ve propelled our clients to success. Digital is our
+              domain.
             </p>
             <div className="mt-7 ml-3">
               <Button
@@ -103,7 +104,7 @@ export default function Index() {
             img={Asterra}
             alt="ASTERRA rebrand"
             title="ASTERRA"
-            description="A client's heroic idea and the brand we built to serve it"
+            description='A client"s heroic idea and the brand we built to serve it'
             src="/asterra"
           />
         </div>
@@ -113,7 +114,7 @@ export default function Index() {
         <div className="px-6 max-w-screen-md sm:px-10 lg:sticky lg:top-48 lg:max-w-[550px] lg:z-10">
           <h2 className="font-gin text-7xl mb-6">Services to set the course</h2>
           <p className="font-libre_franklin text-xl leading-normal">
-            Building a successful brand is a voyage—but you'll never make it
+            Building a successful brand is a voyage—but you will never make it
             without a solid strategy. Our crew provides full-funnel marketing
             strategy that creates sustained brand growth.
           </p>
@@ -128,9 +129,9 @@ export default function Index() {
           </div>
         </div>
         {/* Ocean */}
-        <div className="bg-no-repeat bg-cover bg-[url('/ocean.png')] w-full h-[200px] opacity-40 md:h-[500px] lg:absolute lg:top-96 lg:left-0 lg:z-0"></div>
+        <div className='bg-no-repeat bg-cover bg-[url("/ocean.png")] w-full h-[200px] opacity-40 md:h-[500px] lg:absolute lg:top-96 lg:left-0 lg:z-0'></div>
         {/* Solutions Stickers */}
-        <div className="px-6 sm:px-10 bg-no-repeat bg-cover bg-center bg-[url('/deep-ocean.png')] w-full lg:bg-bottom lg:relative lg:mt-48 lg:overflow-hidden">
+        <div className='px-6 sm:px-10 bg-no-repeat bg-cover bg-center bg-[url("/deep-ocean.png")] w-full lg:bg-bottom lg:relative lg:mt-48 lg:overflow-hidden'>
           {SolutionsData.map((solution) => {
             return (
               <div className="mb-96 flex lg:justify-end" key={solution.id}>
@@ -172,10 +173,10 @@ export default function Index() {
             Who the hell is VSSL?
           </h2>
           <p className="font-libre_franklin">
-            We're a crew of brand builders and marketing pros that know how to
-            build brands that stand out. We have our sea legs and we know what
-            it takes to propel your brand to success. Ready to meet the crew?
-            Happy hour is at five.
+            We&quot;re a crew of brand builders and marketing pros that know how
+            to build brands that stand out. We have our sea legs and we know
+            what it takes to propel your brand to success. Ready to meet the
+            crew? Happy hour is at five.
           </p>
           <div className="mt-8">
             <Button
@@ -187,7 +188,7 @@ export default function Index() {
             />
           </div>
         </div>
-        <div className="grid grid-cols-4 bg-[url('/mates.jpg')] bg-cover bg-right-bottom ml-8 pt-4 md:ml-40 lg:ml-80 lg:my-20">
+        <div className='grid grid-cols-4 bg-[url("/mates.jpg")] bg-cover bg-right-bottom ml-8 pt-4 md:ml-40 lg:ml-80 lg:my-20'>
           <Image
             src={Coin}
             alt="VSSL challenge coin"
