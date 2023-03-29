@@ -1,3 +1,5 @@
+import Roll from "react-reveal/Roll";
+
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import Button from "@/components/Button";
@@ -102,57 +104,89 @@ export default function Index() {
         </div>
       </section>
       {/* Solutions */}
-      <section className="px-6 max-w-screen-xl mx-auto sm:px-10">
-        <h2 className="font-gin text-7xl mb-6">Services to set the course</h2>
-        <p className="font-libre_franklin text-xl leading-normal">
-          Building a successful brand is a voyage—but you'll never make it
-          without a solid strategy. Our crew provides full-funnel marketing
-          strategy that creates sustained brand growth.
-        </p>
-        <div className="mt-7">
-          <Button
-            button_class="primary"
-            title="Go forth"
-            type="link"
-            src="/our-solutions"
-            target=""
-          />
+      <section className="max-w-screen-xl mx-auto lg:h-[2700px] lg:my-48 lg:relative">
+        <div className="px-6 max-w-screen-md sm:px-10 lg:sticky lg:top-48 lg:max-w-[550px] lg:z-10">
+          <h2 className="font-gin text-7xl mb-6">Services to set the course</h2>
+          <p className="font-libre_franklin text-xl leading-normal">
+            Building a successful brand is a voyage—but you'll never make it
+            without a solid strategy. Our crew provides full-funnel marketing
+            strategy that creates sustained brand growth.
+          </p>
+          <div className="mt-7">
+            <Button
+              button_class="primary"
+              title="Go forth"
+              type="link"
+              src="/our-solutions"
+              target=""
+            />
+          </div>
+        </div>
+        {/* Ocean */}
+        <div className="bg-no-repeat bg-cover bg-[url('/ocean.png')] w-full h-[200px] opacity-40 md:h-[500px] lg:absolute lg:top-96 lg:left-0 lg:z-0"></div>
+        {/* Solutions Stickers */}
+        <div className="px-6 sm:px-10 bg-no-repeat bg-cover bg-center bg-[url('/deep-ocean.png')] w-full lg:bg-bottom lg:relative lg:mt-48 lg:overflow-hidden">
+          {SolutionsData.map((solution) => {
+            return (
+              <div className="mb-96 flex lg:justify-end" key={solution.id}>
+                <div className="lg:min-w-[300px]">
+                  <p
+                    className="text-4xl font-gin text-gold mb-4"
+                    dangerouslySetInnerHTML={{
+                      __html: solution.title.split(" ").join("<br/>"),
+                    }}
+                  />
+                  <ul className="list-none">
+                    {solution.bullets.map((bullet) => {
+                      return (
+                        <li className="text-xl mb-3" key={bullet.id}>
+                          {bullet.description}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <Roll right>
+                  <Image
+                    src={solution.sticker.src}
+                    alt={solution.sticker.alt}
+                    width={300}
+                    height={300}
+                    className="mb-5"
+                  />
+                </Roll>
+              </div>
+            );
+          })}
         </div>
       </section>
-      {/* Ocean */}
-      <div className="bg-no-repeat bg-cover bg-[url('/ocean.png')] w-full h-[200px] opacity-40 md:h-[500px]"></div>
-      {/* Solutions Stickers */}
-      <section className="px-6 max-w-screen-xl mx-auto sm:px-10 bg-no-repeat bg-cover bg-center bg-[url('/deep-ocean.png')] w-full h-[1000px] md:h-[2000px]">
-        {SolutionsData.map((solution) => {
-          return (
-            <div className="mb-20 flex" key={solution.id}>
-              <div>
-                <p
-                  className="text-4xl font-gin text-gold mb-4"
-                  dangerouslySetInnerHTML={{
-                    __html: solution.title.split(" ").join("<br/>"),
-                  }}
-                />
-                <ul className="list-none">
-                  {solution.bullets.map((bullet) => {
-                    return (
-                      <li className="text-xl mb-3" key={bullet.id}>
-                        {bullet.description}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <Image
-                src={solution.sticker.src}
-                alt={solution.sticker.alt}
-                width={300}
-                height={300}
-                className="mb-5"
-              />
-            </div>
-          );
-        })}
+      {/* Take out */}
+      <section>
+        <h1 className="text-5xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt unde
+          autem reprehenderit porro facere dolorem nulla recusandae perferendis
+          tempora eligendi minima est ipsum perspiciatis, nisi dolorum? Laborum
+          magnam sequi repellendus impedit expedita vero doloremque modi
+          repudiandae soluta deserunt. Possimus ex minus pariatur, cum, in
+          explicabo repellendus omnis dolorum inventore deserunt debitis esse
+          incidunt dicta delectus odit perferendis, dignissimos similique id
+          ipsam repellat ratione. Dolorum architecto hic dignissimos consequatur
+          laboriosam ipsum rerum possimus! Nulla ea, debitis adipisci
+          asperiores, quos at sint tempore porro suscipit, nemo ad! Tenetur rem
+          minus rerum, eos sapiente perspiciatis blanditiis saepe? Modi, velit.
+          Aliquid non alias nostrum dolorum voluptates tempora amet nisi nam ab
+          perferendis, odio modi sit obcaecati quis incidunt a nobis officiis
+          possimus, unde eligendi recusandae. Possimus ipsa voluptates ab
+          aliquam nam obcaecati excepturi. Perspiciatis blanditiis odio tempora
+          tenetur qui, laborum molestiae praesentium neque vitae ut, commodi
+          repellendus. Earum natus odio amet maiores, magnam, iure perspiciatis
+          aliquam voluptate libero similique cum? Quo architecto enim nisi,
+          corrupti, odit sapiente vel sed ullam eius natus aut reiciendis
+          repellat! Sint est, quisquam qui veniam officia natus, pariatur modi
+          quam nisi maxime eligendi veritatis facilis in alias fugiat
+          accusantium quibusdam quos vero, saepe voluptatem fuga nihil itaque
+          quas. Consectetur.
+        </h1>
       </section>
     </Layout>
   );
