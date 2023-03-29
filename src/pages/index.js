@@ -5,12 +5,17 @@ import Layout from "@/components/Layout";
 import Button from "@/components/Button";
 import Salt from "@/components/Salt";
 import FeaturedWorkCard from "@/components/FeaturedWorkCard";
+import CrewPortrait from "@/components/CrewPortrait";
+
 import Shipwrecked from "/public/shipwrecked.jpg";
 import Shaka from "/public/ocean-shaka.jpg";
 import Captain from "/public/captain-at-the-wheel.jpg";
 import Thumbnail from "/public/sample/reel-thumbnail.jpg";
 import MAPP from "/public/sample/mapp.jpg";
 import Asterra from "/public/sample/asterra.jpg";
+import Beach from "/public/beach.jpg";
+import Coin from "/public/coin.jpg";
+import Ocean from "/public/ocean.jpg";
 
 // Replace with real data source
 import SolutionsData from "@/data/homepage/solutions.js";
@@ -104,7 +109,7 @@ export default function Index() {
         </div>
       </section>
       {/* Solutions */}
-      <section className="max-w-screen-xl mx-auto lg:h-[2700px] lg:my-48 lg:relative">
+      <section className="max-w-screen-xl mx-auto lg:h-[2500px] lg:my-40 lg:relative">
         <div className="px-6 max-w-screen-md sm:px-10 lg:sticky lg:top-48 lg:max-w-[550px] lg:z-10">
           <h2 className="font-gin text-7xl mb-6">Services to set the course</h2>
           <p className="font-libre_franklin text-xl leading-normal">
@@ -129,7 +134,7 @@ export default function Index() {
           {SolutionsData.map((solution) => {
             return (
               <div className="mb-96 flex lg:justify-end" key={solution.id}>
-                <div className="lg:min-w-[300px]">
+                <div className="lg:min-w-[275px]">
                   <p
                     className="text-4xl font-gin text-gold mb-4"
                     dangerouslySetInnerHTML={{
@@ -150,8 +155,8 @@ export default function Index() {
                   <Image
                     src={solution.sticker.src}
                     alt={solution.sticker.alt}
-                    width={300}
-                    height={300}
+                    width={250}
+                    height={250}
                     className="mb-5"
                   />
                 </Roll>
@@ -160,33 +165,55 @@ export default function Index() {
           })}
         </div>
       </section>
-      {/* Take out */}
-      <section>
-        <h1 className="text-5xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt unde
-          autem reprehenderit porro facere dolorem nulla recusandae perferendis
-          tempora eligendi minima est ipsum perspiciatis, nisi dolorum? Laborum
-          magnam sequi repellendus impedit expedita vero doloremque modi
-          repudiandae soluta deserunt. Possimus ex minus pariatur, cum, in
-          explicabo repellendus omnis dolorum inventore deserunt debitis esse
-          incidunt dicta delectus odit perferendis, dignissimos similique id
-          ipsam repellat ratione. Dolorum architecto hic dignissimos consequatur
-          laboriosam ipsum rerum possimus! Nulla ea, debitis adipisci
-          asperiores, quos at sint tempore porro suscipit, nemo ad! Tenetur rem
-          minus rerum, eos sapiente perspiciatis blanditiis saepe? Modi, velit.
-          Aliquid non alias nostrum dolorum voluptates tempora amet nisi nam ab
-          perferendis, odio modi sit obcaecati quis incidunt a nobis officiis
-          possimus, unde eligendi recusandae. Possimus ipsa voluptates ab
-          aliquam nam obcaecati excepturi. Perspiciatis blanditiis odio tempora
-          tenetur qui, laborum molestiae praesentium neque vitae ut, commodi
-          repellendus. Earum natus odio amet maiores, magnam, iure perspiciatis
-          aliquam voluptate libero similique cum? Quo architecto enim nisi,
-          corrupti, odit sapiente vel sed ullam eius natus aut reiciendis
-          repellat! Sint est, quisquam qui veniam officia natus, pariatur modi
-          quam nisi maxime eligendi veritatis facilis in alias fugiat
-          accusantium quibusdam quos vero, saepe voluptatem fuga nihil itaque
-          quas. Consectetur.
-        </h1>
+      {/* Our Crew */}
+      <section className="flex flex-col items-center relative">
+        <div className="p-10 lg:p-0 lg:w-2/6 flex items-center flex-col text-center mt-16">
+          <h2 className="font-gin text-4xl lg:text-5xl leading-none text-white mb-5">
+            Who the hell is VSSL?
+          </h2>
+          <p className="font-libre_franklin">
+            We're a crew of brand builders and marketing pros that know how to
+            build brands that stand out. We have our sea legs and we know what
+            it takes to propel your brand to success. Ready to meet the crew?
+            Happy hour is at five.
+          </p>
+          <div className="mt-8">
+            <Button
+              button_class="primary"
+              title="Who is VSSL?"
+              type="link"
+              src="#"
+              target="_blank"
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-4 bg-[url('/mates.jpg')] bg-cover bg-right-bottom ml-8 pt-4 md:ml-40 lg:ml-80 lg:my-20">
+          <Image
+            src={Coin}
+            alt="VSSL challenge coin"
+            className="-translate-y-2/4 -translate-x-1/3 z-10 md:-translate-x-2/4 md:-translate-y-20"
+          />
+          <div className="col-span-3"></div>
+          <Image
+            src={Beach}
+            alt="Salty beach"
+            className="col-span-3 -translate-y-2/4 -translate-x-1/4 md:col-span-2 md:-translate-x-8"
+          />
+          <div></div>
+          <Image
+            src={Ocean}
+            alt="Sink or swim"
+            className="col-span-2 pl-10 -translate-y-1/4 -translate-x-1/4 md:-translate-x-72 md:pl-32 lg:-translate-x-52"
+          />
+          <div className="col-span-2 ml-8 -translate-y-full -translate-x-1/4 md:w-[200px] md:-translate-x-2/4 md:-translate-y-30 lg:-translate-y-24 lg:w-[350px] lg:h-96">
+            <div className="md:sticky md:top-2/4">
+              <CrewPortrait />
+            </div>
+          </div>
+        </div>
+        <div className="-translate-y-1/4 md:-translate-x-72 lg:-translate-x-[200%] lg:-translate-y-28">
+          <Salt title="The right crew can sink a fleet" />
+        </div>
       </section>
     </Layout>
   );
