@@ -59,7 +59,6 @@ const CrewPortrait = () => {
       });
     });
   }
-
   return (
     <div>
       <Image
