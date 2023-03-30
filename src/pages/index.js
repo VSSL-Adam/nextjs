@@ -1,4 +1,5 @@
-import Roll from "react-reveal/Roll";
+import Bounce from "react-reveal/Bounce";
+// import {motion, useScroll} from "framer-motion"
 
 import Image from "next/image";
 import Layout from "@/components/Layout";
@@ -99,6 +100,7 @@ export default function Index() {
             title="MAPP Cloud"
             description="The right way to upgrade a website"
             src="/mapp"
+            priority={true}
           />
           <FeaturedWorkCard
             img={Asterra}
@@ -106,6 +108,7 @@ export default function Index() {
             title="ASTERRA"
             description='A client"s heroic idea and the brand we built to serve it'
             src="/asterra"
+            priority={true}
           />
         </div>
       </section>
@@ -129,12 +132,15 @@ export default function Index() {
           </div>
         </div>
         {/* Ocean */}
-        <div className='bg-no-repeat bg-cover bg-[url("/ocean.png")] w-full h-[200px] opacity-40 md:h-[500px] lg:absolute lg:top-96 lg:left-0 lg:z-0'></div>
+        <div className='bg-no-repeat bg-cover bg-[url("/ocean.png")] w-full h-[300px] opacity-40 md:h-[350] lg:h-[500px] lg:absolute lg:top-96 lg:left-0 lg:z-0'></div>
         {/* Solutions Stickers */}
-        <div className='px-6 sm:px-10 bg-no-repeat bg-cover bg-center bg-[url("/deep-ocean.png")] w-full lg:bg-bottom lg:relative lg:mt-48 lg:overflow-hidden'>
+        <div className='px-6 sm:px-10 bg-no-repeat bg-cover bg-center bg-[url("/deep-ocean.png")] w-full lg:bg-bottom lg:relative lg:mt-48 overflow-hidden'>
           {SolutionsData.map((solution) => {
             return (
-              <div className="mb-96 flex lg:justify-end" key={solution.id}>
+              <div
+                className="mb-20 lg:mb-96 flex lg:justify-end"
+                key={solution.id}
+              >
                 <div className="lg:min-w-[275px]">
                   <p
                     className="text-4xl font-gin text-gold mb-4"
@@ -152,15 +158,15 @@ export default function Index() {
                     })}
                   </ul>
                 </div>
-                <Roll right>
+                <Bounce duration={2000} onReveal={() => console.log("hello")}>
                   <Image
                     src={solution.sticker.src}
                     alt={solution.sticker.alt}
                     width={250}
                     height={250}
-                    className="mb-5"
+                    className="lg:mb-5 pr-6 lg:pr-0 w-auto"
                   />
-                </Roll>
+                </Bounce>
               </div>
             );
           })}

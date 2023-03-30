@@ -16,6 +16,7 @@ import Bre from "/public/sample/bre.jpg";
 import Lisa from "/public/sample/lisa.jpg";
 import Michael from "/public/sample/michael.jpg";
 import Dog from "/public/sample/dog.jpg";
+import { useEffect, useState } from "react";
 
 const CrewPortrait = () => {
   // 🚨 Replace with your own data 🚨 //
@@ -36,29 +37,34 @@ const CrewPortrait = () => {
     { id: "Michael Gauthier", src: Michael },
     { id: "Dog looking out of window", src: Dog },
   ];
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      const scrollLocation = window.scrollY;
-      let scrollValue = 250;
-      imageArr.forEach((image, index) => {
-        const currentImage = document.getElementById(image.id);
-        image.scrollLocation = scrollValue += 50;
-        const nextImage =
-          index < imageArr.length
-            ? document.getElementById(imageArr[index].id)
-            : null;
-        if (scrollLocation > image.scrollLocation) {
-          currentImage.classList.add("opacity-0");
-          if (nextImage) {
-            nextImage.classList.remove("opacity-0");
+
+  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () => {
+        const scrollLocation = window.scrollY;
+        let scrollValue = 250;
+        imageArr.forEach((image, index) => {
+          const currentImage = document.getElementById(image.id);
+          image.scrollLocation = scrollValue += 50;
+          const nextImage =
+            index < imageArr.length
+              ? document.getElementById(imageArr[index].id)
+              : null;
+          if (scrollLocation > image.scrollLocation) {
+            currentImage.classList.add("opacity-0");
+            if (nextImage) {
+              nextImage.classList.remove("opacity-0");
+            }
           }
-        }
-        if (scrollLocation < image.scrollLocation) {
-          nextImage.classList.add("opacity-0");
-        }
+          if (scrollLocation < image.scrollLocation) {
+            nextImage.classList.add("opacity-0");
+          }
+        });
       });
-    });
-  }
+    }
+  }, []);
+  // }, [prevScrollPos]);
   return (
     <div>
       <Image
