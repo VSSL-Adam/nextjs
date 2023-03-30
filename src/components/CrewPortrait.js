@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useMemo } from "react";
 
 import Default from "/public/sample/adam.jpg";
 import Yara from "/public/sample/yara.jpg";
@@ -16,33 +17,41 @@ import Bre from "/public/sample/bre.jpg";
 import Lisa from "/public/sample/lisa.jpg";
 import Michael from "/public/sample/michael.jpg";
 import Dog from "/public/sample/dog.jpg";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { productionBrowserSourceMaps } from "../../next.config";
 
 const CrewPortrait = () => {
   // 🚨 Replace with your own data 🚨 //
-  const imageArr = [
-    { id: "Yara Gosula", src: Yara },
-    { id: "Sparks flying off metal", src: Sparks },
-    { id: "Tim Peacock", src: Tim },
-    { id: "Lindsey Sloan", src: Lindsey },
-    { id: "Dwayne Jones", src: Dwayne },
-    { id: "Keri Gerhear", src: Keri },
-    { id: "Deck on water", src: Deck },
-    { id: "Beach bonfire", src: Beach },
-    { id: "VSSL Challenge Coins", src: Coin },
-    { id: "Wooden dock", src: Dock },
-    { id: "Woman holding smartphone", src: Phone },
-    { id: "Bre Arnost", src: Bre },
-    { id: "Lisa Sydes", src: Lisa },
-    { id: "Michael Gauthier", src: Michael },
-    { id: "Dog looking out of window", src: Dog },
-  ];
+  const imageArr = useMemo(
+    () => [
+      { id: "Yara Gosula", src: Yara },
+      { id: "Sparks flying off metal", src: Sparks },
+      { id: "Tim Peacock", src: Tim },
+      { id: "Lindsey Sloan", src: Lindsey },
+      { id: "Dwayne Jones", src: Dwayne },
+      { id: "Keri Gerhear", src: Keri },
+      { id: "Deck on water", src: Deck },
+      { id: "Beach bonfire", src: Beach },
+      { id: "VSSL Challenge Coins", src: Coin },
+      { id: "Wooden dock", src: Dock },
+      { id: "Woman holding smartphone", src: Phone },
+      { id: "Bre Arnost", src: Bre },
+      { id: "Lisa Sydes", src: Lisa },
+      { id: "Michael Gauthier", src: Michael },
+      { id: "Dog looking out of window", src: Dog },
+    ],
+    []
+  );
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () => {
         const scrollLocation = window.scrollY;
-        let scrollValue = 250;
+        let scrollValue =
+          scrollLocation +
+          document
+            .getElementById("scroll-starting-point")
+            .getBoundingClientRect().top;
         imageArr.forEach((image, index) => {
           const currentImage = document.getElementById(image.id);
           image.scrollLocation = scrollValue += 50;
@@ -62,7 +71,7 @@ const CrewPortrait = () => {
         });
       });
     }
-  }, []);
+  }, [imageArr]);
   return (
     <div>
       <Image
