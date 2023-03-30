@@ -38,7 +38,6 @@ const CrewPortrait = () => {
     { id: "Dog looking out of window", src: Dog },
   ];
 
-  // const [prevScrollPos, setPrevScrollPos] = useState(0);
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () => {
@@ -64,7 +63,6 @@ const CrewPortrait = () => {
       });
     }
   }, []);
-  // }, [prevScrollPos]);
   return (
     <div>
       <Image
