@@ -47,6 +47,12 @@ const CrewPortrait = () => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () => {
         const scrollLocation = window.scrollY;
+        let additionalHeight = 0;
+        if (window.innerWidth < 600) {
+          additionalHeight = 25;
+        } else {
+          additionalHeight = 50;
+        }
         let scrollValue =
           scrollLocation +
           document
@@ -54,7 +60,7 @@ const CrewPortrait = () => {
             .getBoundingClientRect().top;
         imageArr.forEach((image, index) => {
           const currentImage = document.getElementById(image.id);
-          image.scrollLocation = scrollValue += 50;
+          image.scrollLocation = scrollValue += additionalHeight;
           const nextImage =
             index < imageArr.length
               ? document.getElementById(imageArr[index].id)
