@@ -1,12 +1,15 @@
 import Bounce from "react-reveal/Bounce";
 
+// Components
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import Button from "@/components/Button";
 import Salt from "@/components/Salt";
 import FeaturedWorkCard from "@/components/FeaturedWorkCard";
 import CrewPortrait from "@/components/CrewPortrait";
+import Prefooter from "@/components/Prefooter";
 
+// Images
 import Shipwrecked from "/public/shipwrecked.jpg";
 import Shaka from "/public/ocean-shaka.jpg";
 import Captain from "/public/captain-at-the-wheel.jpg";
@@ -115,14 +118,14 @@ export default function Index() {
       </section>
       {/* Solutions */}
       <section className="xl:h-[2500px] xl:my-40 xl:relative">
-        <div className="px-6 max-w-screen-md sm:px-10 xl:sticky xl:top-48 xl:z-10 xl:pl-32">
+        <div className="px-6 max-w-screen-md mx-auto sm:text-center xl:text-left xl:mx-0 sm:px-10 xl:sticky xl:top-48 xl:z-10 xl:pl-32">
           <h2 className="font-gin text-7xl mb-6">Services to set the course</h2>
           <p className="font-libre_franklin text-xl leading-normal">
             Building a successful brand is a voyage—but you will never make it
             without a solid strategy. Our crew provides full-funnel marketing
             strategy that creates sustained brand growth.
           </p>
-          <div className="mt-7">
+          <div className="mt-7 sm:flex sm:justify-center xl:block">
             <Button
               button_class="primary"
               title="Go forth"
@@ -177,11 +180,11 @@ export default function Index() {
       </section>
       {/* Our Crew */}
       <section className="flex flex-col items-center relative">
-        <div className="p-10 lg:p-0 lg:w-2/6 flex items-center flex-col text-center mt-16">
-          <h2 className="font-gin text-4xl lg:text-5xl leading-none text-white mb-5">
+        <div className="p-10 lg:p-0 lg:w-3/6 flex items-center flex-col text-center mt-16">
+          <h2 className="font-gin text-7xl leading-none text-white mb-5">
             Who the hell is VSSL?
           </h2>
-          <p className="font-libre_franklin">
+          <p className="font-libre_franklin text-xl leading-normal">
             We&#39;re a crew of brand builders and marketing pros that know how
             to build brands that stand out. We have our sea legs and we know
             what it takes to propel your brand to success. Ready to meet the
@@ -225,6 +228,34 @@ export default function Index() {
           <Salt title="The right crew can sink a fleet" />
         </div>
       </section>
+      {/* Resources */}
+      <section className="px-6 my-20 max-w-screen-xl mx-auto">
+        <div className="bg-dark_gray p-8 md:p-14">
+          <h2 className="font-gin text-7xl leading-none text-white mb-5 md:mb-0">
+            Resources while at sea
+          </h2>
+          <div className="md:flex md:items-center">
+            <p className="font-libre_franklin text-xl leading-normal">
+              Digital marketing is complicated but don&#39;t get lost at sea.
+              Check out some resources from the crew to help get you back on
+              course.
+            </p>
+            <div className="mt-7">
+              <Button
+                button_class="primary"
+                title="Dive Deeper"
+                type="link"
+                src="/resources"
+                target=""
+              />
+            </div>
+          </div>
+        </div>
+        <div className="w-60 ml-auto mr-12">
+          <Salt title="Uncharted territory is where we thrive" />
+        </div>
+      </section>
+      <Prefooter />
     </Layout>
   );
 }
